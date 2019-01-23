@@ -37,7 +37,7 @@ class Application
       @@cart << item_to_add
       return "#{item_to_add} has been added to cart"
     else
-      return "Couldn't find #{search_term}"
+      return "Couldn't find #{item_to_add}"
     end
   end
 end
