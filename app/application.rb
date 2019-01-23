@@ -1,4 +1,4 @@
-require 'pry'
+
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
@@ -19,7 +19,7 @@ class Application
       resp.write handle_cart
     elsif req.path.match(/add/)
       item_to_add = req.params["q"]
-      binding.pry
+      puts "item: #{item_to_add}"
       resp.write handle_add(item_to_add)
     else
       resp.write "Path Not Found"
