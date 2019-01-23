@@ -34,7 +34,7 @@ class Application
     end
   end
   
-  def handle_add(item_to_add)
+  def handle_cart
     if @@items.include?(item_to_add)
       @@cart << item_to_add
       return "#{item_to_add} has been added to cart"
