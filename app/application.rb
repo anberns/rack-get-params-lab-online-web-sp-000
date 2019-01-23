@@ -42,6 +42,15 @@ class Application
       return "Couldn't find #{item_to_add}"
     end
   end
+  
+  def handle_add(item_to_add)
+    if @@items.include?(item_to_add)
+      @@cart << item_to_add
+      return "#{item_to_add} has been added to cart"
+    else
+      return "Couldn't find #{item_to_add}"
+    end
+  end
 end
 
 describe "Shopping Cart Rack App" do
