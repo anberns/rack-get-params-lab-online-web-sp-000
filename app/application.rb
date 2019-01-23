@@ -18,6 +18,7 @@ class Application
       resp.write handle_cart
     elsif req.path.match(/add/)
       item_to_add = req.params["q"]
+      puts item_to_add
       resp.write handle_add(item_to_add)
     else
       resp.write "Path Not Found"
