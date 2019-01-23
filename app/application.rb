@@ -45,30 +45,13 @@ class Application
   def handle_add(item_to_add)
     if @@items.include?(item_to_add)
       @@cart << item_to_add
-      return "#{item_to_add} has been added to cart"
+      return "added #{item_to_add}"
     else
       return "Couldn't find #{item_to_add}"
     end
   end
 end
 
-describe "Shopping Cart Rack App" do
-  def app()
-    Application.new
-  end
-  describe "/cart" do
-    it "responds with empty cart message if the cart is empty" do
-      Application.class_variable_set(:@@cart, [])
-      get '/cart'
-      expect(last_response.body).to include("Your cart is empty")
-    end
-
-    it "responds with a cart list if there is something in there" do
-      Application.class_variable_set(:@@cart, ["Apples","Oranges"])
-      get '/cart'
-      expect(last_response.body).to include("Apples\nOranges")
-    end
-  end
 
   describe "/add" do
 
