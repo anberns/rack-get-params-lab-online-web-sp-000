@@ -38,7 +38,7 @@ class Application
     if !@@cart.empty?
       return @@cart
     else
-      return "Couldn't find #{item_to_add}"
+      return "Your cart is empty"
     end
   end
   
