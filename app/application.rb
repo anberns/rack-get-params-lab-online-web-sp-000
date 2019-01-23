@@ -36,7 +36,7 @@ class Application
   
   def handle_cart
     if !@@cart.empty?
-      return @@cart.join('\n')
+      return @@cart.join(""\n")
     else
       return "Your cart is empty"
     end
