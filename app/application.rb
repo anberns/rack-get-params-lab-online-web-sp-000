@@ -19,7 +19,6 @@ class Application
       resp.write handle_cart
     elsif req.path.match(/add/)
       item_to_add = req.params["q"]
-      puts "item: #{item_to_add}"
       resp.write handle_add(item_to_add)
     else
       resp.write "Path Not Found"
@@ -46,6 +45,7 @@ class Application
   
   def handle_add(item_to_add)
     if @@items.include?(item_to_add)
+      puts item_to_add
       @@cart << item_to_add
       return "added #{item_to_add}"
     else
